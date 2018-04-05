@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Form with Axios in Vue.JS</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div id="app">
+  <form @submit.prevent="submitForm">
+    <div>
+      <label for="name">Name:</label><br>
+      <input id="name" type="text" v-model="name" required/>
+    </div>
+    <div>
+      <label for="email">Email:</label><br>
+      <input id="email" type="email" v-model="email" required/>
+    </div>
+    <div>
+      <label for="firstSon">Who was the first son on mahtmagandi:</label><br>
+      <textarea id="firstSon" v-model="firstSon" required></textarea>
+    </div>
+    <button :class="[name ? activeClass : '']" type="submit">Submit</button>
+    <div>
+      <h3>Data retrieved from server:</h3>
+      <pre>{{ response }}</pre>
+    </div>
+  </form>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
